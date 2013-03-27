@@ -83,6 +83,9 @@ class PostViewTest(TestCase):
         self.assertIn('posts/all-posts.html',
                       [t.name for t in response.templates])
 
+        # Make sure the post's title appears in the rendered content.
+        self.assertIn(posts[0].title, response.content)
+
     def test_posts_by_tag_page(self):
         response = self.client.get('/tags/blog/')
 
@@ -97,6 +100,9 @@ class PostViewTest(TestCase):
         # Make sure it used the default template.
         self.assertIn('posts/posts-by-tag.html',
                       [t.name for t in response.templates])
+
+        # Make sure the post's title appears in the rendered content.
+        self.assertIn(posts[0].title, response.content)
 
     def test_post_page(self):
         response = self.client.get('/posts/my-first-post/')
