@@ -1,17 +1,17 @@
 from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from django.views.generic import RedirectView
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+
+admin.autodiscover()
+
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'mock_project.views.home', name='home'),
-    # url(r'^mock_project/', include('mock_project.foo.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # The homepage should just show all posts, so redirect them there.
+    url(r'^$', RedirectView.as_view(url='/posts/'), name='home'),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    # Include the standard URLs at the top level.
+    url(r'', include('posts.urls')),
 )

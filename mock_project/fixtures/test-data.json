@@ -1,0 +1,263 @@
+[
+{
+    "pk": 1, 
+    "model": "flexible_content.baseitem", 
+    "fields": {
+        "ordering": 2, 
+        "content_area_id": 1, 
+        "content_area_ct": [
+            "posts", 
+            "post"
+        ]
+    }
+},
+{
+    "pk": 2, 
+    "model": "flexible_content.baseitem", 
+    "fields": {
+        "ordering": 1, 
+        "content_area_id": 2, 
+        "content_area_ct": [
+            "posts", 
+            "post"
+        ]
+    }
+},
+{
+    "pk": 3, 
+    "model": "flexible_content.baseitem", 
+    "fields": {
+        "ordering": 1, 
+        "content_area_id": 3, 
+        "content_area_ct": [
+            "posts", 
+            "post"
+        ]
+    }
+},
+{
+    "pk": 2, 
+    "model": "default_item_types.plaintext", 
+    "fields": {
+        "text": "This is just a news post!"
+    }
+},
+{
+    "pk": 3, 
+    "model": "default_item_types.plaintext", 
+    "fields": {
+        "text": "This post won't be published until 2030."
+    }
+},
+{
+    "pk": 1, 
+    "model": "default_item_types.plaintext", 
+    "fields": {
+        "text": "Just making sure that posts work properly!"
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "test", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-03-27T18:09:16.996Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$TYA0E5RiwCkb$C2gfvpOBQqqS4UMwcb32RT/kDPvdz0WA1FU9DHF/iR4=", 
+        "email": "test@test.com", 
+        "date_joined": "2013-03-27T18:06:02.628Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "basicuser", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": true, 
+        "last_login": "2013-03-27T18:19:46Z", 
+        "groups": [], 
+        "user_permissions": [
+            [
+                "add_post", 
+                "posts", 
+                "post"
+            ], 
+            [
+                "change_post", 
+                "posts", 
+                "post"
+            ], 
+            [
+                "delete_post", 
+                "posts", 
+                "post"
+            ]
+        ], 
+        "password": "pbkdf2_sha256$10000$GI7F2MVkyc6h$aOCfeobSGk17TOZxk/hpfvd1ukiu+O7G6BIvse6jf7g=", 
+        "email": "", 
+        "date_joined": "2013-03-27T18:19:46Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "posts.post", 
+    "fields": {
+        "author": [
+            "test"
+        ], 
+        "published": "2013-03-27T18:09:17Z", 
+        "slug": "my-first-post", 
+        "title": "My First Post"
+    }
+},
+{
+    "pk": 2, 
+    "model": "posts.post", 
+    "fields": {
+        "author": [
+            "basicuser"
+        ], 
+        "published": "2013-03-27T18:22:11Z", 
+        "slug": "post-basic-user", 
+        "title": "Post by a Basic User"
+    }
+},
+{
+    "pk": 3, 
+    "model": "posts.post", 
+    "fields": {
+        "author": [
+            "test"
+        ], 
+        "published": "2030-03-27T18:32:30Z", 
+        "slug": "unpublished-post", 
+        "title": "Unpublished Post"
+    }
+},
+{
+    "pk": 1, 
+    "model": "taggit.tag", 
+    "fields": {
+        "name": "Blog", 
+        "slug": "blog"
+    }
+},
+{
+    "pk": 2, 
+    "model": "taggit.tag", 
+    "fields": {
+        "name": "Test Post", 
+        "slug": "test-post"
+    }
+},
+{
+    "pk": 3, 
+    "model": "taggit.tag", 
+    "fields": {
+        "name": "News", 
+        "slug": "news"
+    }
+},
+{
+    "pk": 4, 
+    "model": "taggit.tag", 
+    "fields": {
+        "name": "Press Release", 
+        "slug": "press-release"
+    }
+},
+{
+    "pk": 1, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 1, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 2, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 2, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 2
+    }
+},
+{
+    "pk": 4, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 3, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 2, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 3
+    }
+},
+{
+    "pk": 6, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 3, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 3
+    }
+},
+{
+    "pk": 7, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+        "tag": 4, 
+        "content_type": [
+            "posts", 
+            "post"
+        ], 
+        "object_id": 3
+    }
+}
+]

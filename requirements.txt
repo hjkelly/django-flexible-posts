@@ -1,4 +1,5 @@
 django-flexible-content
+django-taggit
 django-nose
 coverage
 pep8

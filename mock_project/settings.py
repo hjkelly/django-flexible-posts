@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=pages',
+    '--cover-package=posts',
 ]
 
 FIXTURE_DIRS = (
@@ -117,8 +117,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-
-    'pages.middleware.PageMiddleware',
 )
 
 ROOT_URLCONF = 'mock_project.urls'
@@ -127,8 +125,7 @@ ROOT_URLCONF = 'mock_project.urls'
 WSGI_APPLICATION = 'mock_project.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SITE_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -138,6 +135,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'taggit',
 
     'flexible_content',
     'flexible_content.default_item_types',
